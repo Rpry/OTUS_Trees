@@ -42,11 +42,17 @@ public class TreeOperations
         {
             Traverse(originNode.Left);
         }
-        Console.WriteLine(originNode.Value);
+        Process(originNode.Value);
         if (originNode.Right != null)
         {
             Traverse(originNode.Right);
         }
+    }
+
+    private static void Process<T>(T nodeValue)
+    {
+        //какая-то обработка
+        Console.WriteLine(nodeValue);
     }
 
     public static void DeleteFromTree(TreeNode<int> root)
@@ -128,7 +134,7 @@ public class TreeOperations
             {
                 return FindNode(root.Left, number, operationsCount + 1);
             }
-
+ 
             return (null, -1);
         }
         if (number > root.Value)
